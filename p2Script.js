@@ -14,11 +14,11 @@ function validation()
   {
     guestAnswer = document.getElementById("question1").value;
 
-    chk = guestAnswer.localeCompare(answer1);
-    if (chk == 0)
+    chk = guestAnswer.localeCompare(answer1); //returns 0 if they are the same string
+    if (chk == 0) //checks if it is equal to 0
     {
-      sessionStorage.correctAnswer = 1;
-    }
+      sessionStorage.correctAnswer = 1; //create a sessionStorage to hold number
+    }                                   //of correct answers
   }
   else if (page == "Question 2")
   {
@@ -27,13 +27,14 @@ function validation()
     chk = guestAnswer.localeCompare(answer2);
     if (chk == 0)
     {
-      if (sessionStorage.correctAnswer)
+      if (sessionStorage.correctAnswer) //Checks if there is a correctAnswer currently
       {
         sessionStorage.correctAnswer = Number(sessionStorage.correctAnswer)+1;
+        //If there is it adds one to the answer
       }
       else
       {
-          sessionStorage.correctAnswer = 1;
+          sessionStorage.correctAnswer = 1; //if not starts a session storage
       }
     }
   }
@@ -56,8 +57,8 @@ function validation()
   }
   else if (page == "Results")
   {
-    result = Number(sessionStorage.correctAnswer);
-    percentage = (result / 3) * 100;
+    result = Number(sessionStorage.correctAnswer); //Covert answer to a number
+    percentage = (result / 3) * 100; //Calculate the percentage
     console.log(result);
     console.log(percentage);
   }
