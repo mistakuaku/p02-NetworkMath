@@ -8,6 +8,7 @@ function validation()
   var page = document.title;
   var chk;
   var guestAnswer;
+  var percentage, result;
 
   if (page == "Question 1")
   {
@@ -26,7 +27,14 @@ function validation()
     chk = guestAnswer.localeCompare(answer2);
     if (chk == 0)
     {
-      sessionStorage.correctAnswer = 2;
+      if (sessionStorage.correctAnswer)
+      {
+        sessionStorage.correctAnswer = Number(sessionStorage.correctAnswer)+1;
+      }
+      else
+      {
+          sessionStorage.correctAnswer = 1;
+      }
     }
   }
   else if (page == "Question 3")
@@ -36,12 +44,22 @@ function validation()
     chk = guestAnswer.localeCompare(answer3);
     if (chk == 0)
     {
-      sessionStorage.correctAnswer = 3;
+      if (sessionStorage.correctAnswer)
+      {
+        sessionStorage.correctAnswer = Number(sessionStorage.correctAnswer)+1;
+      }
+      else
+      {
+          sessionStorage.correctAnswer = 1;
+      }
     }
   }
   else if (page == "Results")
   {
-
+    result = Number(sessionStorage.correctAnswer);
+    percentage = (result / 3) * 100;
+    console.log(result);
+    console.log(percentage);
   }
 
 
