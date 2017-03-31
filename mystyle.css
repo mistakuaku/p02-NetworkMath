@@ -20,4 +20,9 @@ input[type=text]:focus{
 body {
   background-color: #DFCDB4;
   font-family: Calibri, Helvetica, Arial, sans-serif;
+  color: darkblue;
+}
+
+.col{
+  float: left;
 }

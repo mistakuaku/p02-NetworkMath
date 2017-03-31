@@ -8,7 +8,7 @@ function validation()
   var page = document.title;
   var chk;
   var guestAnswer;
-  var percentage = 0
+  var percentage = 0;
   var result = 0;
 
   if (page == "Question 1")
@@ -22,7 +22,8 @@ function validation()
     }                                   //of correct answers
     else
     {
-        sessionStorage.correctAnswer = 0;
+        sessionStorage.correctAnswer = 0; //if it is not right well
+                                          //create a storage and assign it zero
     }
 
   }
@@ -43,8 +44,8 @@ function validation()
           sessionStorage.correctAnswer = 1; //if not starts a session storage
       }
     }
-    else
-    {
+    else //assume that they have a session storage open so just add 0 to the
+    {   //storage if they got it wrong
 
       sessionStorage.correctAnswer = Number(sessionStorage.correctAnswer)+0;
 
