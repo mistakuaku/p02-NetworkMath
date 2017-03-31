@@ -8,7 +8,8 @@ function validation()
   var page = document.title;
   var chk;
   var guestAnswer;
-  var percentage, result;
+  var percentage = 0
+  var result = 0;
 
   if (page == "Question 1")
   {
