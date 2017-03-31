@@ -59,6 +59,8 @@ function validation()
   {
     result = Number(sessionStorage.correctAnswer); //Covert answer to a number
     percentage = (result / 3) * 100; //Calculate the percentage
+    document.getElementById("quest").innerHTML = result + "/3";
+    document.getElementById("asnwr").innerHTML = percentage + "%";
     console.log(result);
     console.log(percentage);
   }
