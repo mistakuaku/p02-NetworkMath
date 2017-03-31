@@ -20,6 +20,11 @@ function validation()
     {
       sessionStorage.correctAnswer = 1; //create a sessionStorage to hold number
     }                                   //of correct answers
+    else
+    {
+        sessionStorage.correctAnswer = 0;
+    }
+
   }
   else if (page == "Question 2")
   {
@@ -38,6 +43,12 @@ function validation()
           sessionStorage.correctAnswer = 1; //if not starts a session storage
       }
     }
+    else
+    {
+
+      sessionStorage.correctAnswer = Number(sessionStorage.correctAnswer)+0;
+
+    }
   }
   else if (page == "Question 3")
   {
@@ -55,13 +66,15 @@ function validation()
           sessionStorage.correctAnswer = 1;
       }
     }
+    else
+    {
+      sessionStorage.correctAnswer = Number(sessionStorage.correctAnswer)+0;
+    }
   }
   else if (page == "Results")
   {
     result = Number(sessionStorage.correctAnswer); //Covert answer to a number
     percentage = (result / 3) * 100; //Calculate the percentage
-    result = result.toString();
-    percentage = percentage.toString();
     document.getElementById("quest").innerHTML = result + "/3";
     document.getElementById("asnwr").innerHTML = percentage + "%";
     console.log(result);
