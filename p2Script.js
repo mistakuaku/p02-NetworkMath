@@ -2,7 +2,7 @@ function validation()
 {
   var answer1, answer2, answer3;
   answer1 = "01101110111100";
-  answer2 = "46,115,184,253,322,391,460";
+  answer2 = "46115184253322391460";
   answer3 = "-6,-6,-12,-18,-30,-48";
 
   var page = document.title;
@@ -83,4 +83,53 @@ function validation()
   }
 
 
+}
+
+function autoCheck() {
+  var qChk1, qChk2, qChk3;
+
+  var page = document.title;
+
+  if (page == "Question 1")
+  {
+    qChk1 = document.getElementById("question1").value;
+    if(isNaN(qChk1))
+    {
+      document.getElementById("verify").style.visibility = "visible";
+      document.getElementById("verify").innerHTML="Please enter numbers only";
+      document.getElementById("question1").style.border = "2px solid red";
+    }
+    else {
+      document.getElementById("verify").style.visibility = "hidden";
+      document.getElementById("question1").style.border = "2px solid white"
+    }
+  }
+  else if(page == "Question 2")
+  {
+    qChk2 = document.getElementById("question2").value;
+    if(isNaN(qChk2))
+    {
+      document.getElementById("verify").style.visibility = "visible";
+      document.getElementById("verify").innerHTML="Please enter numbers only";
+      document.getElementById("question2").style.border = "2px solid red";
+    }
+    else {
+      document.getElementById("verify").style.visibility = "hidden";
+      document.getElementById("question2").style.border = "2px solid white"
+    }
+  }
+  else if(page == "Question 3")
+  {
+    qChk3 = document.getElementById("question3").value;
+    if(isNaN(qChk3))
+    {
+      document.getElementById("verify").style.visibility = "visible";
+      document.getElementById("verify").innerHTML="Please enter numbers only";
+      document.getElementById("question3").style.border = "2px solid red";
+    }
+    else {
+      document.getElementById("verify").style.visibility = "hidden";
+      document.getElementById("question3").style.border = "2px solid white"
+    }
+  }
 }

@@ -1,11 +1,3 @@
-input[type=text]{
-  border: 2px solid black;
-  border-radius: 4px;
-}
-
-input[type=text]:focus{
-  border: 2px solid lightblue;
-}
 
 .button{
   padding: 15px 32px;
@@ -18,11 +10,26 @@ input[type=text]:focus{
 }
 
 body {
-  background-color: #DFCDB4;
+  background-color: black;
   font-family: Calibri, Helvetica, Arial, sans-serif;
-  color: darkblue;
+  color: green;
 }
 
 .col{
   float: left;
+  width: 50%;
+}
+
+#verify{
+  visibility: hidden;
+  color: red;
+}
+
+input[type=text]{
+  outline: none;
+}
+
+.input{
+  border: 2px solid green;
+  border-radius: 4px;
 }
