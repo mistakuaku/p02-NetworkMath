@@ -1,5 +1,7 @@
 function validation()
 {
+  //I need to relaod these variables in order to check in case someone
+  //decides to skip without answering
   var answer1, answer2, answer3;
   answer1 = "01101110111100";
   answer2 = "46115184253322391460";
