@@ -3,7 +3,7 @@ function validation()
   var answer1, answer2, answer3;
   answer1 = "01101110111100";
   answer2 = "46115184253322391460";
-  answer3 = "-6,-6,-12,-18,-30,-48";
+  answer3 = "6612183048";
 
   var page = document.title;
   var chk;
@@ -102,6 +102,7 @@ function autoCheck() {
     else {
       document.getElementById("verify").style.visibility = "hidden";
       document.getElementById("question1").style.border = "2px solid white"
+      checkAnswer();
     }
   }
   else if(page == "Question 2")
@@ -116,6 +117,7 @@ function autoCheck() {
     else {
       document.getElementById("verify").style.visibility = "hidden";
       document.getElementById("question2").style.border = "2px solid white"
+      checkAnswer();
     }
   }
   else if(page == "Question 3")
@@ -130,6 +132,97 @@ function autoCheck() {
     else {
       document.getElementById("verify").style.visibility = "hidden";
       document.getElementById("question3").style.border = "2px solid white"
+      checkAnswer();
     }
   }
+}
+
+function checkAnswer() {
+  var answer1, answer2, answer3;
+  answer1 = "01101110111100";
+  answer2 = "46115184253322391460";
+  answer3 = "6612183048";
+
+  var page = document.title;
+  var chk;
+  var guestAnswer;
+
+  if (page == "Question 1")
+  {
+    guestAnswer = document.getElementById("question1").value;
+
+    chk = guestAnswer.localeCompare(answer1);
+
+    if (chk == 0) //checks if it is equal to 0
+    {
+      document.getElementById("verify").style.visibility = "visible";
+      document.getElementById("verify").innerHTML="Correct";
+      document.getElementById("verify").style.color="green";
+      document.getElementById("question1").style.border = "2px solid green";
+    }
+    else if(guestAnswer == "") //if nothing is in the input
+    {
+      document.getElementById("verify").style.visibility="hidden";
+    }
+    else
+    {
+      document.getElementById("verify").style.visibility = "visible";
+      document.getElementById("verify").innerHTML="Try again.";
+      document.getElementById("verify").style.color="red";
+      document.getElementById("question1").style.border = "2px solid red";
+
+    }
+  }
+  if (page == "Question 2")
+  {
+    guestAnswer = document.getElementById("question2").value;
+
+    chk = guestAnswer.localeCompare(answer2);
+
+    if (chk == 0) //checks if it is equal to 0
+    {
+      document.getElementById("verify").style.visibility = "visible";
+      document.getElementById("verify").innerHTML="Correct";
+      document.getElementById("verify").style.color="green";
+      document.getElementById("question2").style.border = "2px solid green";
+    }
+    else if(guestAnswer == "") //if nothing is in the input
+    {
+      document.getElementById("verify").style.visibility="hidden";
+    }
+    else
+    {
+      document.getElementById("verify").style.visibility = "visible";
+      document.getElementById("verify").innerHTML="Try again.";
+      document.getElementById("verify").style.color="red";
+      document.getElementById("question2").style.border = "2px solid red";
+
+    }
+  }
+  if (page == "Question 3")
+  {
+    guestAnswer = document.getElementById("question3").value;
+
+    chk = guestAnswer.localeCompare(answer3);
+
+    if (chk == 0) //checks if it is equal to 0
+    {
+      document.getElementById("verify").style.visibility = "visible";
+      document.getElementById("verify").innerHTML="Correct";
+      document.getElementById("verify").style.color="green";
+      document.getElementById("question3").style.border = "2px solid green";
+    }
+    else if(guestAnswer == "") //if nothing is in the input
+    {
+      document.getElementById("verify").style.visibility="hidden";
+    }
+    else
+    {
+      document.getElementById("verify").style.visibility = "visible";
+      document.getElementById("verify").innerHTML="Try again.";
+      document.getElementById("verify").style.color="red";
+      document.getElementById("question3").style.border = "2px solid red";
+    }
+  }
+
 }
